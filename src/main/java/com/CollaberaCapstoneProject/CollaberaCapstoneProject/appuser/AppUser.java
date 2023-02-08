@@ -11,12 +11,13 @@ import java.util.Collections;
 
 @Data
 @NoArgsConstructor
-@Entity
+@Entity(name="shahib_user")
+@Table(name="shahib_user")
 public class AppUser implements UserDetails {
 
     @Id
-    @SequenceGenerator(name="user_sequence", sequenceName = "user_sequence", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_sequence")
+    @SequenceGenerator(name="shahib_user_sequence", sequenceName = "shahib_user_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "shahib_user_sequence")
     private Long id;
     private String firstname;
     private String lastname;
