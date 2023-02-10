@@ -35,7 +35,7 @@ public class WebSecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests((authz) ->
-                        authz.requestMatchers("/api/v*/registration/**", "/api/v*/login/**")
+                        authz.requestMatchers("/api/v*/registration/**", "/api/v*/login/**", "/api/v*/favourite/**")
                                 .permitAll()
                                 .anyRequest().authenticated().and()
                 )

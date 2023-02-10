@@ -24,18 +24,10 @@ public class LoginService {
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     private final AppUserRepository appUserRepository;
-//    public String login(LoginRequest request) {
     public Optional<AppUser> login(LoginRequest request) {
         boolean checkUserExists = appUserRepository.findByEmail(request.getEmail()).isPresent();
         boolean userAccExists = passwordEncoder.matches(request.getPassword(), appUserRepository.findByEmail(request.getEmail()).get().getPassword());
         Optional<AppUser> userExists = appUserRepository.findByEmail(request.getEmail());
-
-
-
-
-        System.out.println("I AM EMPEROR MASTER OF EUROPE");
-        System.out.println(userExists.get().getEmail());
-        System.out.println(checkUserExists);
 
 
         if(!checkUserExists) {
@@ -57,11 +49,7 @@ public class LoginService {
         Optional<AppUser> userExists = appUserRepository.findByEmail(email);
             HttpHeaders responseHeaders = new HttpHeaders();
 
-
-
-
-        System.out.println("I AM EMPEROR MASTER OF EUROPE");
-        if(!checkUserExists) {
+            if(!checkUserExists) {
 //            throw new IllegalStateException("Email not found, please register!");
             responseHeaders.add("Email-not-found-error", "Email not found, please register");
             return new ResponseEntity<>(userExists, responseHeaders, 401);
