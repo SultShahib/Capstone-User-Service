@@ -26,7 +26,6 @@ public class RegistrationService {
 
     public ResponseEntity<String> registerUser(String firstname, String lastname, String email, String password) {
         boolean isValidEmail = emailValidator.test(email);
-//        boolean isValidPassword = passwordValidator.test(password);
         HttpHeaders responseHeaders = new HttpHeaders();
 
         if(!isValidEmail) {
@@ -36,7 +35,6 @@ public class RegistrationService {
 
         if(password.length() < 8) {
             responseHeaders.add("Invalid password", "Invalid password");
-//            TODO: add proper password validation later (uppercase, special character)
             return new ResponseEntity<>("Password Must be at least 8 Characters Long", responseHeaders, 401);
         }
         return appUserService.registerUser(new AppUser(firstname, lastname, email, password, AppUserRole.USER));

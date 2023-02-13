@@ -12,15 +12,7 @@ import java.util.Optional;
 @AllArgsConstructor
 @CrossOrigin(origins = "*")
 public class LoginController {
-
     private final LoginService loginService;
-
-//    @GetMapping()
-//    public Optional<AppUser> login(@RequestBody LoginRequest request) {
-////    public String login(@RequestBody LoginRequest request) {
-//        return loginService.login(request);
-//
-//    }
 
     @GetMapping("/{email}/{password}")
     public ResponseEntity<Optional<AppUser>> loginUser(@PathVariable String email, @PathVariable String password) {

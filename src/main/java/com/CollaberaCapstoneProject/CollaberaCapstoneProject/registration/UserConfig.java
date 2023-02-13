@@ -16,7 +16,7 @@
 //    CommandLineRunner commandLineRunner(AppUserService appUserService) {
 //        return args -> {
 //            System.out.println("@@@@@@@@@@Command line runner being activated@@@@@@@@@@");
-//            appUserService.registerUser(new AppUser("admin", "lastname", "admin@gmail.com", "Admin123!", AppUserRole.ADMIN));
+//            appUserService.registerUser(new AppUser("admin", "lastname", "admin@admin.com", "Admin123!", AppUserRole.ADMIN));
 //        };
 //
 //    }

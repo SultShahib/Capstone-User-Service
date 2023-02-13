@@ -27,10 +27,8 @@ public class WebSecurityConfig {
 
 
 
-//    TODO: Changed the method accordign to chatGPT. Uncomment for original version
     @Bean
     @Primary
-//    public HttpSecurity configure(HttpSecurity http) throws Exception {
     public SecurityFilterChain configure(HttpSecurity http) throws Exception {
         http
                 .csrf(csrf -> csrf.disable())
@@ -41,7 +39,6 @@ public class WebSecurityConfig {
                 )
                 .httpBasic(withDefaults());
         return http.build();
-//        return http;
     }
 
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {

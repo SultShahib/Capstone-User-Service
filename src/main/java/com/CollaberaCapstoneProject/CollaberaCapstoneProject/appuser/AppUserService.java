@@ -31,7 +31,6 @@ public class AppUserService implements UserDetailsService {
          boolean userExists = appUserRepository.findByEmail(appUser.getEmail()).isPresent();
 
          if(userExists) {
-             System.out.println("Email already taken!");
              throw new IllegalStateException("Email Already Taken!");
          }
 
@@ -40,7 +39,6 @@ public class AppUserService implements UserDetailsService {
 
          appUserRepository.save(appUser);
 
-//         Send confirmation token
         return "It works signing up user with encoded password";
 
     }
@@ -59,14 +57,11 @@ public class AppUserService implements UserDetailsService {
          appUser.setPassword(encodedPassword);
 
          appUserRepository.save(appUser);
-
-//         Send confirmation token
         return new ResponseEntity<>("Registered Successfully", responseHeaders, 200);
 
     }
 
     public Optional<AppUser> loginUser(Optional<AppUser> appUser) {
     return appUser;
-//        return "No user found";
     }
 }

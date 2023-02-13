@@ -10,19 +10,11 @@ import java.util.List;
 @Service
 public class DeleteFavouriteMovie {
     static final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
-    static final String DB_URL = "jdbc:oracle:thin:@oracle-aziz.cilyihqptvjt.us-east-1.rds.amazonaws.com:1521:ORCL";
-    static final String USER = "adminaziz";
-    static final String PASS = "sMArt123_x";
+    static final String DB_URL = "jdbc:oracle:thin:@database-2.cmxecweo1rn2.ap-southeast-1.rds.amazonaws.com:1521:ORCL";
+    static final String USER = "Admin";
+    static final String PASS = "Password123";
 
     public void deleteFavouriteMovie(String movieid, String userid) {
-        List<String> similarIDs = new ArrayList<>();
-        List<String> similarTitle = new ArrayList<>();
-        List<String> similarTitle2 = new ArrayList<>();
-        List<String> movieNames = new ArrayList<>();
-        List<String> movieIDs = new ArrayList<>();
-        List<String> movieID = new ArrayList<>();
-        List<String> movieTitle = new ArrayList<>();
-
                 RunQuery("DELETE FROM shahib_favourite_movie WHERE userid = " + userid + " AND movieid =" + movieid);
 
     }
@@ -39,9 +31,7 @@ public class DeleteFavouriteMovie {
             String sql = myQuery;
             ResultSet rs = stmt.executeQuery(sql);
 
-//            while (rs.next()) {
-//                result.add(rs.getString(myColumn));
-//            }
+
             rs.close();
 
         } catch (SQLException se) {
@@ -62,7 +52,6 @@ public class DeleteFavouriteMovie {
             }
         }
 
-//        return result;
     }
 }
 

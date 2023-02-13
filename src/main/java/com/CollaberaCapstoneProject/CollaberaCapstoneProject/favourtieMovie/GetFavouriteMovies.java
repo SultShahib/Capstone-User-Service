@@ -9,10 +9,9 @@ import java.util.List;
 @Service
 public class GetFavouriteMovies {
     static final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
-    static final String DB_URL = "jdbc:oracle:thin:@oracle-aziz.cilyihqptvjt.us-east-1.rds.amazonaws.com:1521:ORCL";
-    static final String USER = "adminaziz";
-    static final String PASS = "sMArt123_x";
-
+    static final String DB_URL = "jdbc:oracle:thin:@database-2.cmxecweo1rn2.ap-southeast-1.rds.amazonaws.com:1521:ORCL";
+    static final String USER = "Admin";
+    static final String PASS = "Password123";
     public List<String> getFavouriteMovies(String userid) {
         List<String> movieID = new ArrayList<>();
 

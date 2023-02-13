@@ -15,7 +15,6 @@ public class EmailValidator implements Predicate<String> {
 
     @Override
     public boolean test(String s) {
-//        Todo: REGEX validate Email!!
         Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(s);
 
         return matcher.find();

@@ -50,13 +50,11 @@ public class LoginService {
             HttpHeaders responseHeaders = new HttpHeaders();
 
             if(!checkUserExists) {
-//            throw new IllegalStateException("Email not found, please register!");
             responseHeaders.add("Email-not-found-error", "Email not found, please register");
             return new ResponseEntity<>(userExists, responseHeaders, 401);
         }
 
         if( !userAccExists) {
-//            throw new IllegalStateException("Incorrect password, try again!");
             responseHeaders.add("Incorrect-password-error", "Incorrect password, please try again");
             return new ResponseEntity<>(userExists, responseHeaders, 400);
         }

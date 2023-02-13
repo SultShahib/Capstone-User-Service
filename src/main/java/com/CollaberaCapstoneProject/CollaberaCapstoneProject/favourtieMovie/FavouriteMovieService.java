@@ -15,11 +15,9 @@ public class FavouriteMovieService {
     FavouriteMovieRepository favouriteMovieRepository;
 
     public String addFavourite(FavouriteMovie favouriteMovie) {
-        System.out.println("Added movies");
         Optional<FavouriteMovie> checkIfMovieExists = favouriteMovieRepository.findById(favouriteMovie.getMovieid());
 
         if(checkIfMovieExists.isPresent()) {
-            System.out.println("I AM MASTER OF EUROPE NAPOLEON");
             checkIfMovieExists.ifPresent(existingMovie -> {
                 favouriteMovieRepository.deleteByMovieid(existingMovie.getMovieid());
             });        }
@@ -29,8 +27,6 @@ public class FavouriteMovieService {
     }
 
     public List<FavouriteMovie> getAllFavouriteMovie() {
-        System.out.println("Getting all favourite movies");
-        System.out.println(favouriteMovieRepository.findAll());
      return favouriteMovieRepository.findAll();
     }
 

@@ -27,12 +27,7 @@ public class FavouriteMovieController {
 
 
     @GetMapping("/getAllFavouriteMovies")
-//    public ResponseEntity<String> getAllFavouriteMovie() {
     public List<FavouriteMovie> getAllFavouriteMovie() {
-//        HttpHeaders responseHeaders = new HttpHeaders();
-        System.out.println(favouriteMovieService.getAllFavouriteMovie());
-//        responseHeaders.add("Working now", "Working now");
-
         return favouriteMovieService.getAllFavouriteMovie();
     }
 
